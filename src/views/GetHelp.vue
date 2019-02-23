@@ -1,6 +1,6 @@
 <template>
     <div id="getHelp">
-        <v-card dark height="418px" width="50%" style="margin:auto;padding:10px">
+        <v-card white height="418px" width="50%" style="margin:auto;padding:10px">
               <v-card-title>
                 <h1>O que está acontecendo com você?</h1>
               </v-card-title>
@@ -22,7 +22,7 @@
                 
 
                 <div style="text-align:right; width:100%; padding:0; ">
-                  <v-btn color="success" style="height:40px;" type="submit">Criar</v-btn>
+                  <v-btn dark color="botao" style="height:40px;" type="submit">Criar</v-btn>
                 </div>
               </v-form>
             </v-card>

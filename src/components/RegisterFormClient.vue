@@ -17,7 +17,7 @@
            
         </v-container>
         <div style="text-align:right; width:100%; padding:10px;">
-          <v-btn class="login-btn" type="submit" color="success">Register</v-btn>
+          <v-btn dark class="botao" type="submit" color="Black">Register</v-btn>
         </div>
       </v-form>
     </v-card>
@@ -55,5 +55,10 @@ export default {
 </script>
 
 <style>
-
+.botao{
+  border-radius: 38px 38px 38px 38px;
+  -moz-border-radius: 38px 38px 38px 38px;
+  -webkit-border-radius: 38px 38px 38px 38px;
+  border: 0px solid #000000;
+}
 </style>
