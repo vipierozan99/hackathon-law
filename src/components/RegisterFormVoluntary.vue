@@ -1,6 +1,6 @@
 <template>
 <div class="RegisterFormClient">
-    <v-card dark class="login-card">
+    <v-card white class="login-card">
       <v-card-title>
         <h1 style="margin:auto">Register Voluntary</h1>
       </v-card-title>

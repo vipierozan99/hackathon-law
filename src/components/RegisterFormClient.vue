@@ -1,8 +1,8 @@
 <template>
 <div class="RegisterFormClient">
-    <v-card dark class="login-card">
+    <v-card White class="login-card">
       <v-card-title>
-        <h1 style="margin:auto">Register Client</h1>
+        <h1 style="margin:auto">Preciso de ajuda</h1>
       </v-card-title>
       <v-form ref="form" @submit="register">
         <v-container>
@@ -14,6 +14,7 @@
             label="Password"
             required
           ></v-text-field>
+           
         </v-container>
         <div style="text-align:right; width:100%; padding:10px;">
           <v-btn class="login-btn" type="submit" color="success">Register</v-btn>
@@ -37,7 +38,10 @@ export default {
         v => /.+@.+/.test(v) || "E-mail must be valid"
       ],
       password: "",
-      passRules: [v => !!v || "Password is required"]
+      passRules: [v => !!v || "Password is required"
+      ],
+      
+      
     };
   },
   methods: {
