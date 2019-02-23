@@ -22,12 +22,12 @@
             <v-list-tile-title>Me ajude!</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-         <v-list-tile to="Registro">
+         <v-list-tile to="registro">
           <v-list-tile-action>
             <v-icon>contact_mail</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>aaaaaa</v-list-tile-title>
+            <v-list-tile-title>Registre-se!</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -38,7 +38,7 @@
       <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat to="login" v-if="currentUser==null" >Login</v-btn>
-      <v-btn flat y v-if="currentUser==null"  >Registrar</v-btn>
+      <v-btn flat to="registro" v-if="currentUser==null"  >Registrar</v-btn>
       
       <v-btn
         @click="logout"

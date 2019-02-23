@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { Auth } from "@/firebase.js";
+import { Auth,Datab } from "@/firebase.js";
 
 
 Vue.use(Vuex)
@@ -33,6 +33,18 @@ export default new Vuex.Store({
     logout(context){
       Auth.signOut().then(() => {
         context.commit("logout")
+      });
+    },
+    register(context, data){
+      Auth.createUserWithEmailAndPassword(data.email, data.password)
+        .then((user)=>{
+          Datab.collection("Users").add({
+            email: data.email,
+            role: data.role
+          })
+        })
+        .catch(function(error) {
+        console.log(error);
       });
     }
 

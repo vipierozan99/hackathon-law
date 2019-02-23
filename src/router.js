@@ -25,8 +25,8 @@ var router =  new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     }, 
     {
-      path: '/Registro',
-      name: 'Registro',
+      path: '/registro',
+      name: 'registro',
       component: Registro
     },
     {
