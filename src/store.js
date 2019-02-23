@@ -8,7 +8,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     currentUser: null,
-    currentUserRole: null
+    currentUserRole: null,
+    currentUserChatRooms: null
   },
   mutations: {
     login(state,user) {
@@ -20,6 +21,9 @@ export default new Vuex.Store({
     },
     loginRole(state, role){
       state.currentUserRole=role
+    },
+    loginChatRooms(state, chatRooms){
+      state.currentUserChatRooms=chatRooms
     }
 
   },
@@ -33,6 +37,7 @@ export default new Vuex.Store({
           var query = Datab.collection("Users").where("email","==",data.email)
           query.get().then((snapshot)=>{
             context.commit("loginRole", snapshot.docs[0].data().role)
+            context.commit("loginChatRooms", snapshot.docs[0].data().chatRooms)
           })
         })
         .catch(err => {
@@ -48,10 +53,20 @@ export default new Vuex.Store({
     register(context, data){
       Auth.createUserWithEmailAndPassword(data.email, data.password)
         .then((user)=>{
-          Datab.collection("Users").add({
-            email: data.email,
-            role: data.role
-          })
+          if(data.oab){
+            Datab.collection("Users").add({
+              email: data.email,
+              oab:data.oab,
+              role: data.role,
+              chatRooms:[]
+            })
+          }else{
+            Datab.collection("Users").add({
+              email: data.email,
+              role: data.role,
+              chatRooms:[]
+            })
+          }
         })
         .catch(function(error) {
         console.log(error);

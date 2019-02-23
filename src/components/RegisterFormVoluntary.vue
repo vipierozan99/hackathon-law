@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     register() {
-        store.dispatch("register", {email:this.email, password:this.password, role:'voluntary'})
+        store.dispatch("register", {email:this.email, password:this.password, role:'voluntary',oab:this.OABNumber})
         this.$router.replace("login");
     }
   }

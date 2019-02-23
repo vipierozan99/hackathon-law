@@ -16,7 +16,7 @@
                 </v-layout>
 
                 <v-card-actions>
-                <v-btn flat color="Black">Ajude-a!</v-btn>
+                <v-btn flat color="Black" @click="openChat(helpRequest.client)">Ajude-a!</v-btn>
                 </v-card-actions>
             </v-card>
         </v-flex>
@@ -26,13 +26,39 @@
 
 <script>
 import {Datab} from "@/firebase.js"
+import store from "@/store.js"
 
 export default {
     name:"GiveHelp",
-    
     firestore(){
         return{
             helpRequestCollection: Datab.collection("HelpRequests")
+        }
+    },
+    methods:{
+        openChat(clientEmail){
+            //creating chatroom
+            Datab.collection("ChatRooms").add({
+                members:[store.state.currentUser.user.email, clientEmail],
+                messages:[]
+            }).then(chatRoomRef=>{
+                var query = Datab.collection("Users").where("email","==",clientEmail)
+                query.get().then((userSnapshot)=>{
+                    //console.log(userSnapshot.docs[0])
+                    var newchatRooms = userSnapshot.docs[0].data().chatRooms
+                    newchatRooms.push(chatRoomRef)
+                    userSnapshot.docs[0].ref.update({
+                        chatRooms: newchatRooms
+                    })
+                })
+            })
+            
+            //adding to chatRooms array in users
+            //console.log("chatroomref set")
+            
+                
+            //context.commit("loginChatRooms", snapshot.docs[0].data().chatRooms)
+        
         }
     }
 }

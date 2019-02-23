@@ -6,10 +6,10 @@ import Login from './views/Login.vue'
 import Dashboard from './views/Dashboard.vue'
 import GetHelp from './views/GetHelp.vue'
 import GiveHelp from './views/GiveHelp.vue'
+import ChatDirect from "./views/ChatDirect.vue"
 
 
 
-import {Auth} from"@/firebase.js";
 import store from "@/store.js";
 
 Vue.use(Router)
@@ -65,40 +65,16 @@ var router =  new Router({
         voluntary:true
       }
     },
+    {
+      path: '/chat',
+      name: 'chat',
+      component: ChatDirect,
+      meta: {
+        requiresAuth: true,
+      }
+    },
   ]
 })
-
-function authTest(requiresAuth, currentUser){
-  if(requiresAuth && !currentUser){
-    return false
-  }
-  else{
-    return true
-  }
-}
-
-function roleTest(requiredRole, currentUserRole){
-  if(requiredRole==null){
-    return true
-  }else{
-    if(requiredRole==currentUserRole){
-      return true
-    }else{
-      return false
-    }
-  }
-}
-
-function viewAuthorized(currentUser,currentUserRole,requiresAuth,requiredRole){
-  if(!authTest(requiresAuth,currentUser)){
-    return false
-  }
-  else if(!roleTest(requiredRole, currentUserRole)){
-    return false
-  }else{
-    return true
-  }
-}
 
 
 

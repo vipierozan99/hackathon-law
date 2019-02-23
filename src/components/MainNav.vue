@@ -6,7 +6,7 @@
       app
     >
       <v-list dense>
-        <v-list-tile to="/">
+        <v-list-tile to="/dashboard">
           <v-list-tile-action>
             <v-icon>home</v-icon>
           </v-list-tile-action>
@@ -22,6 +22,14 @@
             <v-list-tile-title>Me ajude!</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile v-if="currentUserRole=='client'" to="chat">
+          <v-list-tile-action>
+            <v-icon>contact_mail</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Chat</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
          <v-list-tile v-if="currentUserRole=='voluntary'" to="giveHelp">
           <v-list-tile-action>
             <v-icon>contact_mail</v-icon>
@@ -33,7 +41,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="Black" dark fixed app>
-      <v-toolbar-side-icon @click.stop="toggleDrawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon v-if="currentUser!=null" @click.stop="toggleDrawer"></v-toolbar-side-icon>
       <v-toolbar-title > <v-btn light to="/">JurisMulher</v-btn></v-toolbar-title>
       <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
