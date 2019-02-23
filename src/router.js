@@ -9,8 +9,8 @@ import GiveHelp from './views/GiveHelp.vue'
 
 
 
-
-import { Auth } from "@/firebase.js";
+import {Auth} from"@/firebase.js";
+import store from "@/store.js";
 
 Vue.use(Router)
 
@@ -52,7 +52,8 @@ var router =  new Router({
       name: 'gethelp',
       component: GetHelp,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        client:true
       }
     },
     {
@@ -60,22 +61,67 @@ var router =  new Router({
       name: 'givehelp',
       component: GiveHelp,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        voluntary:true
       }
     },
   ]
 })
 
+function authTest(requiresAuth, currentUser){
+  if(requiresAuth && !currentUser){
+    return false
+  }
+  else{
+    return true
+  }
+}
+
+function roleTest(requiredRole, currentUserRole){
+  if(requiredRole==null){
+    return true
+  }else{
+    if(requiredRole==currentUserRole){
+      return true
+    }else{
+      return false
+    }
+  }
+}
+
+function viewAuthorized(currentUser,currentUserRole,requiresAuth,requiredRole){
+  if(!authTest(requiresAuth,currentUser)){
+    return false
+  }
+  else if(!roleTest(requiredRole, currentUserRole)){
+    return false
+  }else{
+    return true
+  }
+}
 
 
 
 
 router.beforeEach((to, from, next) => {
-  let currentUser = Auth.currentUser;
+  let currentUser = store.state.currentUser;
   let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  let currentUserRole = store.state.currentUserRole;
+  let requiresClient = to.matched.some(record => record.meta.client);
+  let requiresVoluntary = to.matched.some(record => record.meta.voluntary);
 
-  if (requiresAuth && !currentUser) next("login");
+
+  if (requiresAuth && !currentUser){ 
+    next("login");
+  }else if(requiresClient && currentUserRole!="client"){
+    next("login");
+  }else if(requiresVoluntary && currentUserRole!="voluntary"){
+    next("login")
+  }
   else next();
 });
+
+
+
 
 export default router;

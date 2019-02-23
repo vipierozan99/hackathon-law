@@ -34,7 +34,7 @@
     </v-navigation-drawer>
     <v-toolbar color="Black" dark fixed app>
       <v-toolbar-side-icon @click.stop="toggleDrawer"></v-toolbar-side-icon>
-      <v-toolbar-title>JurisMulher</v-toolbar-title>
+      <v-toolbar-title > <v-btn light to="/">JurisMulher</v-btn></v-toolbar-title>
       <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat to="login" v-if="currentUser==null" >Login</v-btn>
