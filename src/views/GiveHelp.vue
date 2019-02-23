@@ -1,7 +1,7 @@
 <template>
     <div id="GiveHelp">
     <v-layout row wrap>
-        <v-flex xs12 sm4  v-for="(helpRequest,index) in helpRequestCollection" :key="index">
+        <v-flex xs12 sm6  v-for="(helpRequest,index) in helpRequestCollection" :key="index">
             <v-card style="margin:30px">
                 <v-card-title primary-title>
                 <div>
@@ -16,7 +16,7 @@
                 </v-layout>
 
                 <v-card-actions>
-                <v-btn flat color="orange">Ajude-a!</v-btn>
+                <v-btn flat color="Black">Ajude-a!</v-btn>
                 </v-card-actions>
             </v-card>
         </v-flex>

@@ -23,9 +23,13 @@
             required
           ></v-text-field>
         </v-container>
+
+       
         <div style="text-align:right; width:100%; padding:10px;">
           <v-btn dark class="botao" type="submit" color="Black">Register</v-btn>
         </div>
+        
+        
       </v-form>
     </v-card>
   </div>
