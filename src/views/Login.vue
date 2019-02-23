@@ -45,7 +45,8 @@ export default {
     login() {
       store.dispatch("login", { email: this.email, password: this.password });
       this.$router.replace("dashboard");
-    }
+    },
+    
   }
 };
 </script>

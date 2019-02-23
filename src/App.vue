@@ -5,8 +5,8 @@
     <v-content>
       <router-view/>
     </v-content>
-    <v-footer color="#000000" app>
-      <span class="white--text">&copy; 2019</span>
+    <v-footer dark>
+      <span >&copy; 2019</span>
     </v-footer>
 </v-app>
 </template>
@@ -18,6 +18,11 @@ export default {
   components:{
     MainNav
   }
+
   
 }
 </script>
+ <style>
+ 
+ </style>
+ 

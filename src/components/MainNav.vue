@@ -74,7 +74,7 @@ export default {
     logout() {
       store.dispatch("logout");
       this.$router.replace("/");
-    }
+    },
   },
   computed:{
     currentUser(){
