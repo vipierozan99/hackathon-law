@@ -1,31 +1,33 @@
 <template>
   <div class="login">
-    <v-card dark class="login-card">
-      <v-card-title>
-        <h1 style="margin:auto">Login to Admin Page</h1>
-      </v-card-title>
-      <v-form ref="form" @submit="login">
-        <v-container>
-          <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
-          <v-text-field
-            v-model="password"
-            :rules="passRules"
-            type="password"
-            label="Password"
-            required
-          ></v-text-field>
-        </v-container>
-        <div style="text-align:right; width:100%; padding:10px;">
-          <v-btn class="login-btn" type="submit" color="success">Login</v-btn>
-        </div>
-      </v-form>
-    </v-card>
+    <section>
+      <v-card white class="login-card">
+        <v-card-title>
+          <h1 style="margin:auto">Login</h1>
+        </v-card-title>
+        <v-form ref="form" @submit="login">
+          <v-container>
+            <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+            <v-text-field
+              v-model="password"
+              :rules="passRules"
+              type="password"
+              label="Password"
+              required
+            ></v-text-field>
+          </v-container>
+          <div style="text-align:center; width:100%; padding:10px;">
+            <v-btn round class="login-btn" type="submit" color="#F5F5F5">Login</v-btn>
+          </div>
+        </v-form>
+      </v-card>
+    </section>
   </div>
 </template>
 
 <script>
 import { Auth } from "../firebase";
-import store from "@/store"
+import store from "@/store";
 export default {
   name: "login",
   data() {
@@ -41,8 +43,8 @@ export default {
   },
   methods: {
     login() {
-        store.dispatch("login", {email:this.email, password:this.password})
-        this.$router.replace("dashboard");
+      store.dispatch("login", { email: this.email, password: this.password });
+      this.$router.replace("dashboard");
     }
   }
 };
@@ -60,6 +62,13 @@ export default {
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+}
+
+.botao{
+  border-radius: 38px 38px 38px 38px;
+  -moz-border-radius: 38px 38px 38px 38px;
+  -webkit-border-radius: 38px 38px 38px 38px;
   border: 0px solid #000000;
 }
 </style>
