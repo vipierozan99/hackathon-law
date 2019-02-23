@@ -4,6 +4,9 @@ import Home from './views/Home.vue'
 import Registro  from './views/Registro.vue'
 import Login from './views/Login.vue'
 import Dashboard from './views/Dashboard.vue'
+import GetHelp from './views/GetHelp.vue'
+import GiveHelp from './views/GiveHelp.vue'
+
 
 
 
@@ -40,6 +43,22 @@ var router =  new Router({
       path: '/dashboard',
       name: 'dashboard',
       component: Dashboard,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/gethelp',
+      name: 'gethelp',
+      component: GetHelp,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/givehelp',
+      name: 'givehelp',
+      component: GiveHelp,
       meta: {
         requiresAuth: true
       }
