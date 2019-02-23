@@ -2,7 +2,7 @@
 <div class="RegisterFormClient">
     <v-card dark class="login-card">
       <v-card-title>
-        <h1 style="margin:auto">Register Client</h1>
+        <h1 style="margin:auto">Register Voluntary</h1>
       </v-card-title>
       <v-form ref="form" @submit="register">
         <v-container>
@@ -37,12 +37,12 @@ export default {
         v => /.+@.+/.test(v) || "E-mail must be valid"
       ],
       password: "",
-      passRules: [v => !!v || "Password is required"]
+      passRules: [v => !!v || "Password is required"],
     };
   },
   methods: {
     register() {
-        store.dispatch("register", {email:this.email, password:this.password, role:"client"})
+        store.dispatch("register", {email:this.email, password:this.password, role:'voluntary'})
         this.$router.replace("login");
     }
   }

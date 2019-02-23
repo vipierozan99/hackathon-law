@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Registro  from './views/Registro.vue'
 import Login from './views/Login.vue'
+import Dashboard from './views/Dashboard.vue'
+
 
 
 import { Auth } from "@/firebase.js";
@@ -25,8 +27,8 @@ var router =  new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     }, 
     {
-      path: '/Registro',
-      name: 'Registro',
+      path: '/registro',
+      name: 'registro',
       component: Registro
     },
     {
@@ -34,8 +36,18 @@ var router =  new Router({
       name: 'login',
       component: Login
     },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: Dashboard,
+      meta: {
+        requiresAuth: true
+      }
+    },
   ]
 })
+
+
 
 
 

@@ -22,12 +22,12 @@
             <v-list-tile-title>Me ajude!</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-         <v-list-tile to="Registro">
+         <v-list-tile to="dashboard">
           <v-list-tile-action>
             <v-icon>contact_mail</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>aaaaaa</v-list-tile-title>
+            <v-list-tile-title>Procure Ajuda!</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -38,7 +38,7 @@
       <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat to="login" v-if="currentUser==null" >Login</v-btn>
-      <v-btn flat y v-if="currentUser==null"  >Registrar</v-btn>
+      <v-btn flat to="registro" v-if="currentUser==null"  >Registrar</v-btn>
       
       <v-btn
         @click="logout"
@@ -46,7 +46,7 @@
         large
         v-if="currentUser!=null"
         color="success"
-      >Hello {{currentUser.email}}, Logout!</v-btn>
+      >Hello {{currentUserRole}} {{currentUser.email}}, Logout!</v-btn>
    
     </v-toolbar-items>
     </v-toolbar>
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { Auth } from "../firebase.js";
+import { Auth, Datab } from "../firebase.js";
 import store from "@/store.js"
 
 export default {
@@ -83,6 +83,9 @@ export default {
       else{
       return store.state.currentUser.user
       }
+    },
+    currentUserRole(){
+      return store.state.currentUserRole
     }
   }
  
