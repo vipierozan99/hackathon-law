@@ -1,6 +1,6 @@
 <template>
     <div id="getHelp">
-        <v-card dark height="418px" width="50%" style="margin:auto;padding:10px">
+        <v-card dark  width="50%" style="margin:auto;padding:10px">
               <v-card-title>
                 <h1>O que está acontecendo com você?</h1>
               </v-card-title>
@@ -19,8 +19,16 @@
                   box
                   auto-grow
                 ></v-textarea>
-                
 
+                <v-select
+                    v-model="tags"
+                    :items="tagOptions"
+                    attach
+                    chips
+                    label="Tags"
+                    multiple
+                ></v-select>
+      
                 <div style="text-align:right; width:100%; padding:0; ">
                   <v-btn color="success" style="height:40px;" type="submit">Criar</v-btn>
                 </div>
@@ -40,6 +48,8 @@ export default {
             requestTitle:null,
             requestDesc:null,
             requiredRule: [v => !!v || "This field is required"],
+            tagOptions:["violencia fisica", "violencia verbal", "violencia sexual"],
+            tags:[]
         }
     },
     methods:{
@@ -50,7 +60,8 @@ export default {
             Datab.collection("HelpRequests").add({
                 title: this.requestTitle,
                 description: this.requestDesc,
-                client: store.state.currentUser.user.email
+                client: store.state.currentUser.user.email,
+                tags:this.tags
             }).then(()=>{
                 this.$router.replace("/")
             })
