@@ -1,15 +1,16 @@
 <template>
     <div id="dashboard">
-        <main-drawer></main-drawer>
+        <depoimentos/>
 
     </div>
 </template>
 
 <script>
+import Depoimentos from "@/components/Depoimentos"
 export default {
     name:"Dashboard",
     components:{
-        
+        Depoimentos
     }
 
 }

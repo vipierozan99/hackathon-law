@@ -22,12 +22,12 @@
             <v-list-tile-title>Me ajude!</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-         <v-list-tile to="registro">
+         <v-list-tile to="dashboard">
           <v-list-tile-action>
             <v-icon>contact_mail</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Registre-se!</v-list-tile-title>
+            <v-list-tile-title>Procure Ajuda!</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
