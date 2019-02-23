@@ -7,7 +7,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    currentUser: null
+    currentUser: null,
+    currentUserRole: null
   },
   mutations: {
     login(state,user) {
@@ -15,6 +16,10 @@ export default new Vuex.Store({
     },
     logout(state){
       state.currentUser=null
+      state.currentUserRole=null
+    },
+    loginRole(state, role){
+      state.currentUserRole=role
     }
 
   },
@@ -23,12 +28,17 @@ export default new Vuex.Store({
       Auth.signInWithEmailAndPassword(data.email, data.password)
         .then((user) => {
           //can use user as arg
-          context.commit("login", user)
           //this.$router.replace("/");
+          context.commit("login", user)
+          var query = Datab.collection("Users").where("email","==",data.email)
+          query.get().then((snapshot)=>{
+            context.commit("loginRole", snapshot.docs[0].data().role)
+          })
         })
         .catch(err => {
           alert(err.message);
         });
+        
     },
     logout(context){
       Auth.signOut().then(() => {

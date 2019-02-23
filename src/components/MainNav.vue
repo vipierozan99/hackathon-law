@@ -46,7 +46,7 @@
         large
         v-if="currentUser!=null"
         color="success"
-      >Hello {{currentUser.email}}, Logout!</v-btn>
+      >Hello {{currentUserRole}} {{currentUser.email}}, Logout!</v-btn>
    
     </v-toolbar-items>
     </v-toolbar>
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { Auth } from "../firebase.js";
+import { Auth, Datab } from "../firebase.js";
 import store from "@/store.js"
 
 export default {
@@ -83,6 +83,9 @@ export default {
       else{
       return store.state.currentUser.user
       }
+    },
+    currentUserRole(){
+      return store.state.currentUserRole
     }
   }
  
