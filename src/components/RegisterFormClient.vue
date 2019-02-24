@@ -17,7 +17,7 @@
            
         </v-container>
         <div style="text-align:right; width:100%; padding:10px;">
-          <v-btn dark class="botao" type="submit" color="#E91E63">Register</v-btn>
+          <v-btn round dark  type="submit" color="#E91E63">Register</v-btn>
         </div>
       </v-form>
     </v-card>
