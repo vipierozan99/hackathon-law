@@ -9,22 +9,22 @@
         </v-layout>
         <v-layout align-start justify-space-around row>
           <v-flex xs2>
-            <h1 class="display-4 font-weight-medium mb-3 teste">2</h1>
+            <h1 class="display-4 font-weight-thin mb-3 teste">2</h1>
           </v-flex>
           <v-flex xs2>
-            <h1 class="display-4 font-weight-medium mb-3 verde">B</h1>
+            <h1 class="display-4 font-weight-thin mb-3 verde">B</h1>
           </v-flex>
           <v-flex xs2>
-            <h1 class="display-4 font-weight-medium mb-3 amarelo">R</h1>
+            <h1 class="display-4 font-weight-thin mb-3 azul">R</h1>
           </v-flex>
           <v-flex xs2>
-            <h1 class="display-4 font-weight-medium mb-3 azul">A</h1>
+            <h1 class="display-4 font-weight-thin mb-3 amarelo">A</h1>
           </v-flex>
           <v-flex xs2>
-            <h1 class="display-4 font-weight-medium mb-3 teste">V</h1>
+            <h1 class="display-4 font-weight-thin mb-3 teste">V</h1>
           </v-flex>
           <v-flex xs2>
-            <h1 class="display-4 font-weight-bold mb-3 teste">E</h1>
+            <h1 class="display-4 font-weight-thin mb-3 teste">E</h1>
           </v-flex>
         </v-layout>
         <v-layout justify-center row>
@@ -99,9 +99,11 @@ export default {
 <style>
 .teste {
   color: #000;
+  
 }
 .verde {
   color: #1b5e20;
+  font-family: hero light; 
 }
 .azul {
   color: #01579b;

@@ -18,14 +18,14 @@
 </template>
 
 <script>
-import Depoimentos from "@/components/Depoimentos";
+
 import RegisterFormClient from "@/components/RegisterFormClient";
 import RegisterFormVoluntary from "@/components/RegisterFormVoluntary";
 
 export default {
   name: "Registro",
   components: {
-    Depoimentos,
+    
     RegisterFormClient,
     RegisterFormVoluntary
   }
