@@ -11,7 +11,6 @@
 
     <v-layout row justify-space-between>
       <v-flex xs12 >
-        <depoimentos/>
       </v-flex>
     </v-layout>
   </div>

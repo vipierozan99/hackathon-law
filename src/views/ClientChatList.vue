@@ -9,8 +9,8 @@
           
         
         <div v-if="chatRoomsList.length!=0">
-            <span  class="headline mb-0">Você ainda nao foi encontrada :(</span><br>
-            <span class="grey--text">Mas aguarde, logo algum anjo te achará</span><br>
+            <span  class="headline mb-0">Você foi encontrada !</span><br>
+            <span class="grey--text">Fale agora com sua conselheira!</span><br>
             <client-chat-box v-for="chatRef in chatRoomsList" :key="chatRef.path" :docRefPath="chatRef.path"/>
           </div>
         
