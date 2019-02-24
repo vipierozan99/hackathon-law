@@ -2,7 +2,7 @@
     <div id="GiveHelp">
     <v-layout row wrap>
         <v-flex xs12 sm6  v-for="(helpRequest,index) in helpRequestCollection" :key="index">
-            <v-card v-if="!helpRequest.adressed" style="margin:30px">
+            <v-card v-if="!helpRequest.adressed" style="margin:5px">
                 <v-card-title primary-title>
                 <div>
                     <h3 class="headline mb-0">{{helpRequest.title}}</h3>
