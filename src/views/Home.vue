@@ -5,7 +5,7 @@
         <v-layout align-center justify-center row wrap>
           <v-flex xs12>
             <v-card class="backLogo">
-              <v-img src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/Logo2brave.jpg?alt=media&token=d17ff5c8-7b84-4e43-aa1b-1bab97fbebcb"></v-img>
+              <v-img height="200px" width="150px" src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/Logo2brave.jpg?alt=media&token=d17ff5c8-7b84-4e43-aa1b-1bab97fbebcb"></v-img>
             </v-card>
           </v-flex>
         </v-layout>
@@ -114,9 +114,9 @@ export default {
   color: #ffca28;
 }
 .backLogo {
-  border-radius: 200px 0px 200px 0px;
-  -moz-border-radius: 200px 0px 200px 0px;
-  -webkit-border-radius: 200px 0px 200px 0px;
+  border-radius: 80px 0px 80px 0px;
+  -moz-border-radius: 80px 0px 80px 0px;
+  -webkit-border-radius: 80px 0px 80px 0px;
   border: 0px solid #000000;
   background: rgba(255, 255, 255, 1);
   background: -moz-linear-gradient(
@@ -163,7 +163,7 @@ export default {
     rgba(5, 5, 5, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#050505', GradientType=1 );
-  width: 333px;
+  width: 150px;
   height: 200px;
 }
 </style>

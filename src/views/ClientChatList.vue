@@ -1,9 +1,10 @@
 <template> 
-    <div id="ClientChatList">
+    <div id="ClientChatList" style="margin-top:30px">
+        <div class="clientJumbo"> 
+            <v-card light style="margin:auto;margin-top:80px">
         
-        
-        <div v-if="chatRoomsList.length==0">
-            <span  class="headline mb-0">Você ainda nao foi encontrada :(</span><br>
+        <div v-if="chatRoomsList.length==0" style="text-align:center">
+            <span class="headline mb-0">Você ainda nao foi encontrada :(</span><br>
             <span class="grey--text">Mas aguarde, logo algum anjo te achará</span><br>
             <v-btn @click="refreshChatList">Atualizar</v-btn>
           </div>
@@ -14,8 +15,8 @@
             <span class="grey--text">Fale agora com sua conselheira!</span><br>
             <client-chat-box v-for="chatRef in chatRoomsList" :key="chatRef.path" :docRefPath="chatRef.path"/>
           </div>
-        
-
+            </v-card>
+        </div>
     </div>
 </template>
 
@@ -67,5 +68,16 @@ export default {
 </script>
 
 <style>
+.clientJumbo{
+    border-radius: 28px 28px 28px 28px;
+    -moz-border-radius: 28px 28px 28px 28px;
+    -webkit-border-radius: 28px 28px 28px 28px;
+    border: 0px solid #000000;
+    background-color: #292723;
+    margin: auto;
+    width: 800px;
+    height:400px;
+    padding: 20px
+}
 
 </style>
