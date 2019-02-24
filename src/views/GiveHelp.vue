@@ -2,7 +2,7 @@
     <div id="GiveHelp">
     <v-layout row wrap>
         <v-flex xs12 sm6  v-for="(helpRequest,index) in helpRequestCollection" :key="index">
-            <v-card style="margin:30px">
+            <v-card v-if="!helpRequest.adressed" style="margin:30px">
                 <v-card-title primary-title>
                 <div>
                     <h3 class="headline mb-0">{{helpRequest.title}}</h3>
@@ -16,7 +16,7 @@
                 </v-layout>
 
                 <v-card-actions>
-                <v-btn flat color="Black" @click="openChat(helpRequest.client)">Ajude-a!</v-btn>
+                <v-btn flat color="Black" @click="openChat(helpRequest.client, helpRequest)">Ajude-a!</v-btn>
                 </v-card-actions>
             </v-card>
         </v-flex>
@@ -36,14 +36,16 @@ export default {
         }
     },
     methods:{
-        openChat(clientEmail){
+        openChat(clientEmail, requestRef){
             //creating chatroom
             Datab.collection("ChatRooms").add({
                 members:[store.state.currentUser.user.email, clientEmail],
                 messages:[]
             }).then(chatRoomRef=>{
-                var query = Datab.collection("Users").where("email","==",clientEmail)
-                query.get().then((userSnapshot)=>{
+                //adding chatroom ref to users
+                //adding to client
+                var queryClient = Datab.collection("Users").where("email","==",clientEmail)
+                queryClient.get().then((userSnapshot)=>{
                     //console.log(userSnapshot.docs[0])
                     var newchatRooms = userSnapshot.docs[0].data().chatRooms
                     newchatRooms.push(chatRoomRef)
@@ -51,14 +53,22 @@ export default {
                         chatRooms: newchatRooms
                     })
                 })
-            })
-            
-            //adding to chatRooms array in users
-            //console.log("chatroomref set")
-            
+                //adding to voluntary
+                var queryVoluntary = Datab.collection("Users").where("email","==",store.state.currentUser.user.email)
+                queryVoluntary.get().then(userSnapshot=>{
+                    var newVoluntaryChatRooms = store.state.currentUserChatRooms
+                    newVoluntaryChatRooms.push(chatRoomRef)
+                    userSnapshot.docs[0].ref.update({
+                        chatRooms: newVoluntaryChatRooms
+                    })
+                    store.dispatch('updateChatRooms', newVoluntaryChatRooms)
+                })
                 
-            //context.commit("loginChatRooms", snapshot.docs[0].data().chatRooms)
-        
+            })
+            //setting adressed:true
+
+            //     TODO TODO TODO
+            
         }
     }
 }

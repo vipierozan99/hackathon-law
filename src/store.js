@@ -24,6 +24,9 @@ export default new Vuex.Store({
     },
     loginChatRooms(state, chatRooms){
       state.currentUserChatRooms=chatRooms
+    },
+    updateChatRooms(state, newChatRooms){
+      state.currentUserChatRooms = newChatRooms
     }
 
   },
@@ -71,6 +74,9 @@ export default new Vuex.Store({
         .catch(function(error) {
         console.log(error);
       });
+    },
+    updateChatRooms(context, newChatRooms){
+      context.commit('updateChatRooms', newChatRooms)
     }
 
   }
