@@ -26,7 +26,7 @@
 
        
         <div style="text-align:right; width:100%; padding:10px;">
-          <v-btn round   Class="letrablack" type="submit" color="#E91E63" >Register</v-btn>
+          <v-btn round Class="letrablack" type="submit" color="#E91E63" >Register</v-btn>
         </div>
         
         

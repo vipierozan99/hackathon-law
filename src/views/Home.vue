@@ -28,16 +28,27 @@
           </v-flex>
         </v-layout >
         <v-layout justify-center row>
-          <h1 class="teste">texto de apresentação</h1>
+          <h1 class="teste">Somos uma plataforma que conecta mulheres que desconhecem ou tem duvidas sobre seus direitos 
+                            a uma rede de advogadas dispostas a ajudá-lase orienta-las de forma voluntária.
+          </h1>
         </v-layout>
       </v-layout>
     </v-parallax>
 
-    <v-parallax src="http://www.hytest.hallmarkautogroup.com/wp-content/uploads/2014/02/01b1.jpg">
+    <v-parallax
+      src="http://www.hytest.hallmarkautogroup.com/wp-content/uploads/2014/02/01b1.jpg"
+    >
+      <v-layout align-center column justify-center>
+        <h1>Como Funiona?</h1>
+      </v-layout>
+    </v-parallax>
+
+    <v-parallax src="http://www.planwallpaper.com/static/images/6942095-abstract-background-wallpaper.jpg"
+    >
       <v-layout align-center column justify-center>
         <v-layout align-center justify-center row wrap>
           <v-flex xs12>
-            <h1 class="display-4 font-weight-thin mb-3 teste">A Ajuda</h1>
+            <h1 class="display-4 font-weight-thin mb-3 teste">Como Participar?</h1>
           </v-flex>
         </v-layout>
         </v-layout>
@@ -53,13 +64,28 @@
       
     </v-parallax>
 
-    <v-parallax
-      src="http://www.planwallpaper.com/static/images/6942095-abstract-background-wallpaper.jpg"
+    <v-parallax src="http://www.wallpaperstalk.com/wp-content/uploads/2019/01/ailQ04b3B.jpg"
     >
       <v-layout align-center column justify-center>
-        <h1>A Ajuda</h1>
-      </v-layout>
+        <v-layout align-center justify-center row wrap>
+          <v-flex xs12>
+            <h1 class="display-4 font-weight-thin mb-3 teste">Como Participar?</h1>
+          </v-flex>
+        </v-layout>
+        </v-layout>
+
+        <v-layout row justify-space-around>
+          <v-flex xs2>
+            <h3 class="display-2 teste">1 passo</h3>
+          </v-flex>
+          <v-flex xs2>
+            <h3 class="display-2 teste">2 passo</h3>
+          </v-flex>
+        </v-layout>
+      
     </v-parallax>
+
+   
   </div>
 </template>
 
