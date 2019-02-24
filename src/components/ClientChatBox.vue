@@ -1,6 +1,6 @@
 <template>
     <div id="chatbox">
-        <v-card @click="openDialog()">
+        <v-card @click="openDialog">
             <v-card-title>{{memberCheck()}}</v-card-title>
         </v-card>
         <v-dialog
@@ -38,7 +38,7 @@ import store from "@/store.js"
 
 
 export default {
-    name:"VoluntaryChatBox",
+    name:"ClientChatBox",
     components:{
         Message
     },
@@ -62,7 +62,7 @@ export default {
                 return false
             }
             var newMessage = {
-                author: this.chatRoom.members[0],
+                author: this.chatRoom.members[1],
                 text: this.messageToSend
             }
             var newMessages = this.chatRoom.messages
@@ -81,7 +81,7 @@ export default {
         },
         memberCheck(){
             if(this.chatRoom.members){
-                return this.chatRoom.members[1]
+                return this.chatRoom.members[0]
             }
             else{
                 return ''
@@ -89,6 +89,7 @@ export default {
         },
         openDialog(){
             this.dialog=true
+            return true
         },
     }
 
