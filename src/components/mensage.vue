@@ -1,10 +1,12 @@
 <template>
   <div class="Mensage">
-    <v-layout>  
-        <h3 class="headline mb-0">email</h3>
-        <v-flex>
-            <div>text sdjfhksaklfggdfgdhfgfhjgdhjf</div>
-        </v-flex>
+    <v-layout row wrap>
+      <v-flex xs12 >
+        <h5 class="me">email</h5>
+      </v-flex>
+      <v-flex xs12>
+        <h4>text sdjfhksaklfggdfgdhfgfhjgdhjf</h4>
+      </v-flex>
     </v-layout>
   </div>
 </template>
@@ -14,4 +16,10 @@ export default {};
 </script>
 
 <style>
+.you{
+    text-align: left;
+}
+.me{
+    text-align: right;
+}
 </style>
