@@ -11,7 +11,7 @@
         </v-layout>
         <v-layout align-start justify-space-around row>
           <v-flex xs2>
-            <h1 class="display-4 font-weight-thin mb-3 teste">2</h1>
+            <h1 class="display-4 font-weight-thin mb-3 preto">2</h1>
           </v-flex>
           <v-flex xs2>
             <h1 class="display-4 font-weight-thin mb-3 verde">B</h1>
@@ -23,21 +23,18 @@
             <h1 class="display-4 font-weight-thin mb-3 amarelo">A</h1>
           </v-flex>
           <v-flex xs2>
-            <h1 class="display-4 font-weight-thin mb-3 teste">V</h1>
+            <h1 class="display-4 font-weight-thin mb-3 preto">V</h1>
           </v-flex>
           <v-flex xs2>
-            <h1 class="display-4 font-weight-thin mb-3 teste">E</h1>
+            <h1 class="display-4 font-weight-thin mb-3 preto">E</h1>
           </v-flex>
         </v-layout>
+
         <v-layout justify-center row>
           <v-flex xs8>
             <h1 class="font-weight-bold teste">
-              Acreditamos que a informação é o primeiro passo para tomar uma decisão 
-              
-              O que você vai encontrar aqui?
-              
-              Aqui você encontra facilidade de informação e os primeiros passos para tomar caso tenha sofrido 
-              algum tipo de violencia e descriminição contra mulher.
+              Acreditamos que a informação é o primeiro passo para tomar uma decisão, pra isso nada melhor que uma
+              plataforma bacana que pode te ajudar a encontrar informação juridica com uma mulher advogada. 
             </h1>
           </v-flex>
         </v-layout>
@@ -45,13 +42,13 @@
     </v-parallax>
 
     <v-parallax src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/6942095-abstract-background-wallpaper.jpg?alt=media&token=9c863684-c9c0-431a-a698-94f8b6c7736a">
-      <v-layout align-center column justify-center>
+      <v-layout align-center column justify-center wrap>
         <h1 class="display-3 font-weight-bold">Não sou advogada como Funciona?</h1>
       </v-layout>
       <v-layout justify-center row>
           <v-flex xs8>
             <h1 class="font-weight-bold">
-              Você coloca seu email e senha, conta qual é seu problema ou sua duvida, e uma advogada voluntária 
+              Você coloca seu email e uma senha pessoalissima, conta qual é seu problema ou sua duvida e uma super advogada voluntária 
               entrara em contato para lhe auxiliar.
             </h1>
           </v-flex>
@@ -72,7 +69,7 @@
       <v-layout justify-center row>
           <v-flex xs8>
             <h1 class="font-weight-bold teste">
-              Você se cadastra, aguarda surgir uma dúvida, quando encontra-la você dá seu apoio a esta mulher.
+              Você se cadastra, abraça uma dúvida e orienta os primeiros passos para essa flor desabrochar.
             </h1>
           </v-flex>
         </v-layout>
@@ -104,6 +101,10 @@ export default {
 .teste {
   color: #000;
   
+}
+
+.Preto {
+  color: #000;
 }
 .verde {
   color: #1b5e20;
