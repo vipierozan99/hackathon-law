@@ -13,7 +13,7 @@
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-btn v-if="chatRoom" flat @click="openChat(chatRoom)" color="green">Converse!</v-btn>
+          <v-btn v-if="chatRoom" flat @click="openChat()" color="green">Converse!</v-btn>
         </v-card-actions>
       </v-card>
 
@@ -21,29 +21,32 @@
         v-model="dialog"
         width="800"
         >
-            <v-card v-if="dialogChat">
+            <v-card v-if="chatRoom">
                 <v-card-title
                 class="headline grey lighten-2"
                 primary-title
+                v-text="chatRoom.members[0]"
                 >
-                {{dialogChat.members[0]}}
+                
                 </v-card-title>
                 <div id="messageBox" style="min-height:200px">
-                    <message v-for="(message,index) in dialogChat.messages" :key="index" :author="message.author" :text="message.text" :wasSent="wasSent(message.author)"></message>
+                    <message v-for="(message,index) in chatRoom.messages" :key="index" :author="message.author" :text="message.text" :wasSent="wasSent(message.author)"></message>
                 </div>
                 <v-card-actions>
-                    <v-form ref="sendMessageForm" @submit="sendMessage" style="width:100%">
+                    <v-form @submit="sendMessage" style="width:100%">
                         <v-text-field
                         label="Digite sua mensagem"
                         v-model="messageToSend"
                         ></v-text-field>
                         
                     </v-form>
-                    <v-btn flat type="submit" @click="sendMessage" color="green">Enviar</v-btn>
+                    <v-btn flat @click="sendMessage" color="green">Enviar</v-btn>
+                    <v-btn flat @click="debug" color="green">debug</v-btn>
                 </v-card-actions>
                 
             </v-card>
         </v-dialog>
+        <v-btn flat @click="debug" color="green">debug</v-btn>
     </div>
 </template>
 
@@ -51,48 +54,50 @@
 import store from "@/store.js"
 import {Datab} from "@/firebase.js"
 import Message from "@/components/Message.vue"
+
+
+
 export default {   
     name:"Counselor",
     components:{
         Message
     },
-    computed:{
-        chatRooms(){
-            return store.state.currentUserChatRooms
-        },
-    },
-    mounted(){
-        store.state.currentUserChatRooms[0].get().then(docSnap=>{
-                var data = docSnap.data()
-                data.path = store.state.currentUserChatRooms[0].path
-                this.chatRoom = data
+    created(){
+        if(store.state.currentUserChatRooms.length==0){
+            console.log("not taken")
+        }else{
+            console.log("trying query")
+            store.state.currentUserChatRooms[0].onSnapshot(querySnap=>{
+                console.log(querySnap.data())
+                var data = querySnap.data()
+                data.ref = querySnap.ref
+                this.chatRoom =  data
             })
-        
+        }
+
     },
     data(){
         return{
-            chatRoom:null,
             dialog: false,
-            dialogChat: null,
-            messageToSend:null
+            messageToSend:null,
+            chatRoom:null
         }
     },
     methods:{
-        openChat(chat){
+        openChat(){
             this.dialog = true
-            this.dialogChat = chat
         },
         sendMessage(){
             if(!this.messageToSend){
                 return false
             }
             var newMessage = {
-                author: this.dialogChat.members[1],
+                author: this.chatRoom.members[1],
                 text: this.messageToSend
             }
-            this.dialogChat.messages.push(newMessage)
-            Datab.doc(this.dialogChat.path).update({
-                messages:this.dialogChat.messages
+            this.chatRoom.messages.push(newMessage)
+            this.chatRoom.ref.update({
+                messages:this.chatRoom.messages
             }) 
             this.messageToSend=null
         },
@@ -103,6 +108,9 @@ export default {
                 return false
             }
         },
+        debug(){
+            console.log(this.chatRoom)
+        }
     }
 
 

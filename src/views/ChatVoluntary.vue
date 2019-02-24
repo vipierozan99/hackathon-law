@@ -2,8 +2,8 @@
     <div id="chatDirect">
         <v-list>
           <v-list-tile
-            v-for="chat in chatRoomList"
-            :key="chat.id"
+            v-for="chat in chatRooms"
+            :key="chat.ref.path"
             avatar 
           >
             <v-list-tile-avatar>
@@ -15,69 +15,63 @@
 
             
           </v-list-tile>
+
         </v-list>
 
         <v-dialog
         v-model="dialog"
         width="800"
         >
-            <v-card v-if="dialogChat">
-                <v-card-title
-                class="headline grey lighten-2"
-                primary-title
-                >
-                {{dialogChat.members[1]}}
-                </v-card-title>
-                <div id="messageBox" style="min-height:200px">
-                    <message v-for="(message,index) in dialogChat.messages" :key="index" :author="message.author" :text="message.text"></message>
-                </div>
-                <v-card-actions>
-                    <v-text-field
-                        label="Digite sua mensagem"
-                        v-model="messageToSend"
-                    ></v-text-field>
-                    <v-btn flat @click="sendMessage" color="green">Enviar</v-btn>
-                </v-card-actions>
-                
-            </v-card>
+        <voluntary-chat-client v-if="dialogChat" :docRefPath="dialogChat.ref.path"/>
         </v-dialog>
+        <v-btn flat @click="debug" color="green">debug</v-btn>
     </div>
 </template>
 
 <script>
 import store from "@/store.js"
 import {Datab} from "@/firebase.js"
-import Message from "@/components/Message.vue"
+import VoluntaryChatClient from "@/components/VoluntaryChatClient.vue"
+
 export default {
     name:"chatVoluntary",
     components:{
-        Message
+        VoluntaryChatClient
     },
-    computed:{
-        chatRooms(){
-            return store.state.currentUserChatRooms
-        },
-    },
-    mounted(){
-        store.state.currentUserChatRooms.forEach(docRef => {
-            docRef.get().then(docSnap=>{
-                var data = docSnap.data()
-                data.path = docRef.path
-                this.chatRoomList.push(data)
-            })
-        });
+    created(){
+        if(store.state.currentUserChatRooms.length==0){
+            console.log("no requests")
+        }else{
+            console.log("trying query")
+            store.state.currentUserChatRooms.forEach(docRef => {
+                docRef.onSnapshot(querySnap=>{
+                    var data = querySnap.data()
+                    data.ref = querySnap.ref
+                    this.$set(this.chatRooms,docRef.path,data)
+                })
+            });
+        }
     },
     data(){
         return{
-            chatRoomList:[],
+            chatRooms:{},
             dialog: false,
             dialogChat: null,
             messageToSend:null
         }
     },
+    computed:{
+        chatRoomsList(){
+            var chatRoomsList = []
+            for(var chatRoom in this.chatRooms){
+                chatRoomsList.push(chatRoom)
+            }
+            return chatRoomsList
+        }
+    },
     methods:{
         openChat(chat){
-            console.log(chat)
+            console.log(chat.ref.path)
             this.dialog = true
             this.dialogChat = chat
         },
@@ -90,10 +84,21 @@ export default {
                 text: this.messageToSend
             }
             this.dialogChat.messages.push(newMessage)
-            Datab.doc(this.dialogChat.path).update({
+            this.dialogChat.ref.update({
                 messages:this.dialogChat.messages
             }) 
+        },
+        wasSent(author){
+            if(author==store.state.currentUser.user.email){
+                return true
+            }else{
+                return false
+            }
+        },
+        debug(){
+            console.log(this.chatRooms["ChatRooms/qe3zzNqj9CXNguVwWXKv"].ref.path)
         }
+
     }
 
 }
