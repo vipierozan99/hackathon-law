@@ -62,6 +62,7 @@
         large
         v-if="currentUser!=null"
         light
+        color="#E91E63"
       >Hello {{currentUserRole}} {{currentUser.email}}, Logout!</v-btn>
    
     </v-toolbar-items>

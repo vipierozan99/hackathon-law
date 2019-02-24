@@ -17,7 +17,7 @@
             ></v-text-field>
           </v-container>
           <div style="text-align:center; width:100%; padding:10px;">
-            <v-btn round class="login-btn" type="submit" color="#F5F5F5">Login</v-btn>
+            <v-btn round dark class="login-btn" type="submit" color="#E91E63">Login</v-btn>
           </div>
         </v-form>
       </v-card>

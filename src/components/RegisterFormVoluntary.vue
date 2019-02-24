@@ -1,6 +1,6 @@
 <template>
 <div class="RegisterFormClient">
-    <v-card white class="login-card">
+    <v-card dark class="login-card">
       <v-card-title>
         <h1 style="margin:auto">Quero ajudar</h1>
       </v-card-title>
@@ -26,7 +26,7 @@
 
        
         <div style="text-align:right; width:100%; padding:10px;">
-          <v-btn dark class="botao" type="submit" color="Black">Register</v-btn>
+          <v-btn round   Class="letrablack" type="submit" color="#E91E63" >Register</v-btn>
         </div>
         
         
@@ -69,5 +69,7 @@ export default {
 </script>
 
 <style>
-
+.letrablack{
+  color: white;
+}
 </style>

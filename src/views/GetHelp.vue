@@ -24,7 +24,7 @@
 
         <div style="text-align:right; width:100%; padding:0; ">
           <v-layout align-end justify-start row reverse fill-height>
-            <v-btn dark color="botao" style="height:40px;" type="submit">Criar</v-btn>
+            <v-btn round dark color="#E91E63" style="height:40px;" type="submit">Criar</v-btn>
           </v-layout>
         </div>
       </v-form>

@@ -16,7 +16,7 @@
                 </v-layout>
 
                 <v-card-actions>
-                <v-btn flat color="Black" @click="openChat(helpRequest.client, helpRequest)">Ajude-a!</v-btn>
+                <v-btn flat color="#E91E63" @click="openChat(helpRequest.client, helpRequest)">Ajude-a!</v-btn>
                 </v-card-actions>
             </v-card>
         </v-flex>

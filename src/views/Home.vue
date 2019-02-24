@@ -40,16 +40,17 @@
             <h1 class="display-4 font-weight-thin mb-3 teste">A Ajuda</h1>
           </v-flex>
         </v-layout>
-        <v-layout align-center justify-space-between row>
-          <v-flex xs6>
+        </v-layout>
+
+        <v-layout row justify-space-around>
+          <v-flex xs2>
             <h3 class="display-2 teste">1 passo</h3>
           </v-flex>
-
-          <v-flex xs6>
+          <v-flex xs2>
             <h3 class="display-2 teste">2 passo</h3>
           </v-flex>
         </v-layout>
-      </v-layout>
+      
     </v-parallax>
 
     <v-parallax
