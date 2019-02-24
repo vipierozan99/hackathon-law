@@ -5,7 +5,7 @@
         <div v-if="chatRoomsList.length==0">
             <span  class="headline mb-0">Você ainda nao foi encontrada :(</span><br>
             <span class="grey--text">Mas aguarde, logo algum anjo te achará</span><br>
-            <v-btn>Atualizar</v-btn>
+            <v-btn @click="refreshChatList">Atualizar</v-btn>
           </div>
           
         
@@ -33,11 +33,7 @@ export default {
     },
     computed:{
         chatRoomsList(){
-            if(this.user.length!=0){
-                return this.user[0].chatRooms
-            }else{
-                return []
-            }
+            return store.state.currentUserChatRooms
         }
     },
     firestore(){
@@ -59,6 +55,10 @@ export default {
         },
         debug(){
             console.log(this.chatRoomsList)
+        },
+        refreshChatList(){
+            var newVoluntaryChatRooms = this.user[0].chatRooms
+            store.dispatch('updateChatRooms', newVoluntaryChatRooms)
         }
     }
 
