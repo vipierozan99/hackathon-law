@@ -32,8 +32,12 @@
         <v-layout justify-center row>
           <v-flex xs8>
             <h1 class="font-weight-bold teste">
-              Somos uma plataforma que conecta mulheres que desconhecem ou tem duvidas sobre seus direitos
-              a uma rede de advogadas dispostas a ajudá-lase orienta-las de forma voluntária.
+              Acreditamos que a informação é o primeiro passo para tomar uma decisão 
+              
+              O que você vai encontrar aqui?
+              
+              Aqui você encontra facilidade de informação e os primeiros passos para tomar caso tenha sofrido 
+              algum tipo de violencia e descriminição contra mulher.
             </h1>
           </v-flex>
         </v-layout>
@@ -42,13 +46,13 @@
 
     <v-parallax src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/6942095-abstract-background-wallpaper.jpg?alt=media&token=9c863684-c9c0-431a-a698-94f8b6c7736a">
       <v-layout align-center column justify-center>
-        <h1 class="display-3 font-weight-bold">Não sou advogada como Funiona?</h1>
+        <h1 class="display-3 font-weight-bold">Não sou advogada como Funciona?</h1>
       </v-layout>
       <v-layout justify-center row>
           <v-flex xs8>
             <h1 class="font-weight-bold">
-              Você se cadastra, conta qual é seu problema ou sua duvida, e então é só aguarda que o mais rapido possivel 
-              uma voluntaria vai te aconcelhar.
+              Você coloca seu email e senha, conta qual é seu problema ou sua duvida, e uma advogada voluntária 
+              entrara em contato para lhe auxiliar.
             </h1>
           </v-flex>
         </v-layout>
@@ -68,7 +72,7 @@
       <v-layout justify-center row>
           <v-flex xs8>
             <h1 class="font-weight-bold teste">
-              Você se cadastra, e fica aguardando uma duvida, quando receber você dá apoio a pessoa que pergunto :D .
+              Você se cadastra, aguarda surgir uma dúvida, quando encontra-la você dá seu apoio a esta mulher.
             </h1>
           </v-flex>
         </v-layout>
@@ -78,15 +82,13 @@
       
       
       <v-layout row align-center justify-space-around>
-        <v-flex xs4>
-          <h3 class="display-2 ">emergencia 180</h3>
+        <v-flex xs6>
+          <h3 class="display-2 ">delegacia da mulher 180</h3>
         </v-flex>
-        <v-flex xs4>
-          <h3 class="display-2 ">lalalala</h3>
+        <v-flex xs6>
+          <h3 class="display-2 ">Policia militar 190</h3>
         </v-flex>
-        <v-flex xs4>
-          <h3 class="display-2">2 passo</h3>
-        </v-flex>
+        
       </v-layout>
     </v-parallax>
   </div>
