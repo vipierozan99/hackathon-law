@@ -5,6 +5,7 @@
         <div v-if="chatRoomsList.length==0">
             <span  class="headline mb-0">Você ainda nao foi encontrada :(</span><br>
             <span class="grey--text">Mas aguarde, logo algum anjo te achará</span><br>
+            <v-btn>Atualizar</v-btn>
           </div>
           
         

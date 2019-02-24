@@ -1,10 +1,12 @@
 <template>
   <div>
-    <v-parallax src="http://www.hytest.hallmarkautogroup.com/wp-content/uploads/2014/02/01b1.jpg">
+    <v-parallax src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/01b1.jpg?alt=media&token=a62e345c-d4a6-4ca2-ad8b-f94220a5aa2d">
       <v-layout align-center column justify-center>
         <v-layout align-center justify-center row wrap>
           <v-flex xs12>
-            <v-card class="backLogo"></v-card>
+            <v-card class="backLogo">
+              <v-img src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/Logo2brave.jpg?alt=media&token=d17ff5c8-7b84-4e43-aa1b-1bab97fbebcb"></v-img>
+            </v-card>
           </v-flex>
         </v-layout>
         <v-layout align-start justify-space-around row>
@@ -38,7 +40,7 @@
       </v-layout>
     </v-parallax>
 
-    <v-parallax src="http://www.planwallpaper.com/static/images/6942095-abstract-background-wallpaper.jpg">
+    <v-parallax src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/6942095-abstract-background-wallpaper.jpg?alt=media&token=9c863684-c9c0-431a-a698-94f8b6c7736a">
       <v-layout align-center column justify-center>
         <h1 class="display-3 font-weight-bold">Não sou advogada como Funiona?</h1>
       </v-layout>
@@ -53,7 +55,7 @@
     </v-parallax>
 
     <v-parallax
-      src="http://www.hytest.hallmarkautogroup.com/wp-content/uploads/2014/02/01b1.jpg"
+      src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/01b1.jpg?alt=media&token=a62e345c-d4a6-4ca2-ad8b-f94220a5aa2d"
     >
       <v-layout align-center column justify-center>
         <v-layout align-center justify-center row wrap>
@@ -72,7 +74,7 @@
         </v-layout>
     </v-parallax>
 
-    <v-parallax src="http://www.planwallpaper.com/static/images/6942095-abstract-background-wallpaper.jpg">
+    <v-parallax src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/6942095-abstract-background-wallpaper.jpg?alt=media&token=9c863684-c9c0-431a-a698-94f8b6c7736a">
       
       
       <v-layout row align-center justify-space-around>
