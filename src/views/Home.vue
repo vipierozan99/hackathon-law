@@ -42,7 +42,7 @@
     </v-parallax>
 
     <v-parallax src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/6942095-abstract-background-wallpaper.jpg?alt=media&token=9c863684-c9c0-431a-a698-94f8b6c7736a">
-      <v-layout align-center column justify-center wrap>
+      <v-layout align-center column justify-center>
         <h1 class="display-3 font-weight-bold">Não sou advogada como Funciona?</h1>
       </v-layout>
       <v-layout justify-center row>
