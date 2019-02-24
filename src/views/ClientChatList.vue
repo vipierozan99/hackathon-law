@@ -1,5 +1,5 @@
 <template> 
-    <div id="ClientChatList" style="margin-top:30px">
+    <div id="ClientChatList" style="margin-top:30px;margin-bottom:30px">
         <div class="clientJumbo"> 
             <v-card light style="margin:auto;margin-top:80px">
         
@@ -75,7 +75,7 @@ export default {
     border: 0px solid #000000;
     background-color: #292723;
     margin: auto;
-    width: 800px;
+    max-width: 800px;
     height:400px;
     padding: 20px
 }

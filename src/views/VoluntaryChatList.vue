@@ -1,5 +1,5 @@
 <template>
-    <div id="VoluntaryChatList" style="margin-top:30px">
+    <div id="VoluntaryChatList" style="margin-top:30px;margin-bottom:30px">
         <div class="voluntaryJumbo">
             <h1 style="margin:auto; color:white; text-align:center">Aqui estão as mulheres que você ajuda!</h1>
             <div style="width:90%;height:90%;margin:auto;">
@@ -40,7 +40,7 @@ export default {
     border: 0px solid #000000;
     background-color: #292723;
     margin: auto;
-    width: 800px;
+    max-width: 800px;
     height:400px;
     padding: 20px
 }

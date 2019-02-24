@@ -44,12 +44,12 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar color="Black" dark fixed app>
+    <v-toolbar color="Black" class="hidden-sm-and-down" dark fixed app>
       <v-toolbar-side-icon v-if="currentUser!=null" @click.stop="toggleDrawer"></v-toolbar-side-icon>
       <v-toolbar-title>
         <v-layout justify-start row>
           <v-flex xs4>
-            <v-btn dark to="/">
+            <v-btn height="60px" dark to="/">
             <v-card class="backLogozinho">
               <v-img height="40px" width="30px" src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/Logo2brave.jpg?alt=media&token=d17ff5c8-7b84-4e43-aa1b-1bab97fbebcb"></v-img>
             </v-card>
@@ -73,6 +73,41 @@
         >Hello {{currentUserRole}} {{currentUser.email}}, Logout!</v-btn>
       </v-toolbar-items>
     </v-toolbar>
+
+    <div class="hidden-md-and-up">
+      <v-expansion-panel dark>
+        <v-expansion-panel-content>
+          <div slot="header" style="width:100%">
+            <v-layout row wrap style="width:100%">
+              <v-flex>
+              <v-btn height="60px" dark to="/">
+              <v-card class="backLogozinho">
+                <v-img height="40px" width="30px" src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/Logo2brave.jpg?alt=media&token=d17ff5c8-7b84-4e43-aa1b-1bab97fbebcb"></v-img>
+              </v-card>
+                <div style="margin-left:15px">2BRAVE</div>
+              </v-btn>
+              <v-btn @click="toggleDrawer" v-if="currentUser!=null" dark flat ><v-icon>reorder</v-icon></v-btn>
+              </v-flex >
+              <v-flex style="width:100%">
+              <v-btn
+                @click="logout"
+                style="margin:auto; width:100%; font-size:9px"
+                large
+                v-if="currentUser!=null"
+                light
+                color="#E91E63"
+              >Hello {{currentUserRole}} {{currentUser.email}}, Logout!</v-btn>
+              </v-flex>
+            </v-layout>
+            
+          </div>
+          <v-card>
+            <v-btn to="/login" flat="flat">Login</v-btn>
+            <v-btn to="/registro" flat="flat">Registrar</v-btn>
+          </v-card>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </div>
   </div>
 </template>
 
@@ -171,4 +206,17 @@ export default {
   width: 30px;
   height: 40px;
 }
+
+
+.theme--dark.v-expansion-panel .v-expansion-panel__container {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #212121;
+  color: #fff;
+}
+.theme--dark.v-sheet {
+  background-color: #424242;
+  border-color: #424242;
+  color: #fff;
+}
+
 </style>

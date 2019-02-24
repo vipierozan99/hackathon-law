@@ -1,6 +1,6 @@
 <template>
   <div id="getHelp">
-    <v-card white height="460px" width="50%" style="margin:auto;padding:10px">
+    <v-card white  style="max-height:600px;margin:auto;padding:10px;max-width:600px;margin-bottom:50px">
       <v-card-title>
         <h1>O que está acontecendo com você?</h1>
       </v-card-title>
