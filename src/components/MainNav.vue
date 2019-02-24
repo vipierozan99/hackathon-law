@@ -47,13 +47,15 @@
     <v-toolbar color="Black" dark fixed app>
       <v-toolbar-side-icon v-if="currentUser!=null" @click.stop="toggleDrawer"></v-toolbar-side-icon>
       <v-toolbar-title>
-        <v-layout justify-start row class="Logo">
-          
-          <v-img
-            src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/Logo2brave.jpg?alt=media&token=d17ff5c8-7b84-4e43-aa1b-1bab97fbebcb"
-          ></v-img>
-        
-        <v-btn dark to="/">2BRAVE</v-btn>
+        <v-layout justify-start row>
+          <v-flex xs4>
+            <v-img
+              src="https://firebasestorage.googleapis.com/v0/b/hackathon-law.appspot.com/o/Logo2brave.jpg?alt=media&token=d17ff5c8-7b84-4e43-aa1b-1bab97fbebcb"
+            ></v-img>
+          </v-flex>
+          <v-flex xs4>
+            <v-btn dark to="/">2BRAVE</v-btn>
+          </v-flex>
         </v-layout>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -112,7 +114,7 @@ export default {
 </script>
 
 <style>
-.logo{
+.logo {
   width: 50%;
   height: 100%;
 }
