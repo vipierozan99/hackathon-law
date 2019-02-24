@@ -1,5 +1,10 @@
 <template>
     <div id="chatbox">
+        <v-card @click="openDialog()">
+            <v-card-title>{{memberCheck()}}</v-card-title>
+        </v-card>
+        <v-dialog
+            v-model="dialog">
         <v-card >
             <v-card-title
             class="headline grey lighten-2"
@@ -22,6 +27,7 @@
             </v-card-actions>
                 
             </v-card>
+        </v-dialog>
     </div>
 </template>
 
@@ -33,7 +39,7 @@ import store from "@/store.js"
 
 
 export default {
-    name:"VoluntaryChatClient",
+    name:"VoluntaryChatBox",
     components:{
         Message
     },
@@ -44,7 +50,8 @@ export default {
     },
     data(){
         return{
-            messageToSend:null
+            messageToSend:null,
+            dialog:false
         }
     },
     props:{
@@ -61,7 +68,7 @@ export default {
             }
             var newMessages = this.chatRoom.messages
             newMessages.push(newMessage)
-            this.chatRoom.update({
+            Datab.doc(this.docRefPath).update({
                 messages: newMessages
             })
             
@@ -75,15 +82,15 @@ export default {
         },
         memberCheck(){
             if(this.chatRoom.members){
-                return this.chatRoom.members[0]
+                return this.chatRoom.members[1]
             }
             else{
                 return ''
             }
         },
-        debug(){
-            console.log(this.chatRoom)
-        }
+        openDialog(){
+            this.dialog=true
+        },
     }
 
 }
