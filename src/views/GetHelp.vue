@@ -57,7 +57,8 @@ export default {
           title: this.requestTitle,
           description: this.requestDesc,
           client: store.state.currentUser.user.email,
-          tags: this.tags
+          tags: this.tags,
+          adressed:false
         })
         .then(() => {
           this.$router.replace("/");
