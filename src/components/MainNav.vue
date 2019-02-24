@@ -42,7 +42,7 @@
     </v-navigation-drawer>
     <v-toolbar color="Black" dark fixed app>
       <v-toolbar-side-icon v-if="currentUser!=null" @click.stop="toggleDrawer"></v-toolbar-side-icon>
-      <v-toolbar-title > <v-btn light to="/">JurisMulher</v-btn></v-toolbar-title>
+      <v-toolbar-title > <v-btn dark to="/">2BRAVE</v-btn></v-toolbar-title>
       <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat to="login" v-if="currentUser==null" >Login</v-btn>
@@ -53,7 +53,7 @@
         style="margin:auto"
         large
         v-if="currentUser!=null"
-        color="success"
+        light
       >Hello {{currentUserRole}} {{currentUser.email}}, Logout!</v-btn>
    
     </v-toolbar-items>

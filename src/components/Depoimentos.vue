@@ -7,14 +7,44 @@
             <h1 class="HeadLine mb-0">informações</h1>
           </div>
         </v-card-title>
+        <v-layout justify-space-between row reverse>
+          <v-card light class="balonMe">
+            <mensage/>
+          </v-card>
+        </v-layout>
+
+        <v-layout justify-space-between row>
+          <v-card dark class="balonYou">
+            <mensage/>
+          </v-card>
+        </v-layout>
       </v-card>
     </div>
   </v-container>
 </template>
 
 <script>
-export default {};
+import mensage from "@/components/mensage";
+
+export default {
+  name: "Depoimentos",
+  components: {
+    mensage
+  }
+};
 </script>
 
 <style>
+.balonMe {
+  border-radius: 125px 0px 125px 125px;
+  -moz-border-radius: 125px 0px 125px 125px;
+  -webkit-border-radius: 125px 0px 125px 125px;
+  border: 10px solid #000000;
+}
+.balonYou {
+  border-radius: 0px 125px 125px 125px;
+  -moz-border-radius: 0px 125px 125px 125px;
+  -webkit-border-radius: 0px 125px 125px 125px;
+  border: 10px solid #000000;
+}
 </style>

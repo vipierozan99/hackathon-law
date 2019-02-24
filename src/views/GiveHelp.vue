@@ -9,14 +9,14 @@
                     <div> {{ helpRequest.description }} </div>
                 </div>
                 </v-card-title>
-                <v-layout justify-start>
-                    <v-flex v-for="(tag,index) in helpRequest.tags" :key="index" class="text-xs-center">
+                <v-layout >
+                    <v-flex v-for="(tag,index) in helpRequest.tags" :key="index" class="text-xs-rigth">
                         <v-chip>{{tag}}</v-chip>
                     </v-flex>
                 </v-layout>
 
                 <v-card-actions>
-                <v-btn flat color="Black" @click="openChat(helpRequest.client)">Ajude-a!</v-btn>
+                <v-btn round color="Black" dark @click="openChat(helpRequest.client)">Ajude-a!</v-btn>
                 </v-card-actions>
             </v-card>
         </v-flex>
