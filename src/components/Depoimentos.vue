@@ -9,13 +9,13 @@
         </v-card-title>
         <v-layout justify-space-between row reverse>
           <v-card light class="balonMe">
-            <mensage/>
+            <message/>
           </v-card>
         </v-layout>
 
         <v-layout justify-space-between row>
           <v-card dark class="balonYou">
-            <mensage/>
+            <message/>
           </v-card>
         </v-layout>
       </v-card>
@@ -24,12 +24,12 @@
 </template>
 
 <script>
-import mensage from "@/components/mensage";
+import Message from "@/components/Message";
 
 export default {
   name: "Depoimentos",
   components: {
-    mensage
+    Message
   }
 };
 </script>

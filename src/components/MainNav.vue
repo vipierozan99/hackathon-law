@@ -22,12 +22,12 @@
             <v-list-tile-title>Me ajude!</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile v-if="currentUserRole=='client'" to="chat">
+        <v-list-tile v-if="currentUserRole=='client'" to="counselor">
           <v-list-tile-action>
             <v-icon>contact_mail</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Chat</v-list-tile-title>
+            <v-list-tile-title>Meu Pedido</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
          <v-list-tile v-if="currentUserRole=='voluntary'" to="giveHelp">
@@ -70,7 +70,6 @@
 </template>
 
 <script>
-import { Auth, Datab } from "../firebase.js";
 import store from "@/store.js"
 
 export default {

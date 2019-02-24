@@ -66,8 +66,9 @@ export default {
                 
             })
             //setting adressed:true
-
-            //     TODO TODO TODO
+            Datab.collection("HelpRequests").doc(requestRef['.key']).update({
+                adressed:true
+            })
             
         }
     }
