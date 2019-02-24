@@ -1,5 +1,6 @@
 <template>
     <div id="chatDirect">
+       <v-layout align-center justify-center row fill-height>
         <v-list>
           <v-list-tile
             v-for="chat in chatRoomList"
@@ -16,6 +17,7 @@
             
           </v-list-tile>
         </v-list>
+       </v-layout>
     </div>
 </template>
 
