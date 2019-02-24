@@ -1,5 +1,5 @@
 <template>
-    <div id="chatDirect">
+    <div id="VoluntaryChatList">
         <v-list>
             <voluntary-chat-box v-for="chatRef in chatRoomsList" :key="chatRef.path" :docRefPath="chatRef.path"/>
         </v-list>
@@ -12,13 +12,18 @@ import {Datab} from "@/firebase.js"
 import VoluntaryChatBox from "@/components/VoluntaryChatBox.vue"
 
 export default {
-    name:"chatVoluntary",
+    name:"VoluntaryChatList",
     components:{
         VoluntaryChatBox
     },
     computed:{
         chatRoomsList(){
             return store.state.currentUserChatRooms
+        }
+    },
+    methods:{
+        debug(){
+            console.log(this.chatRoomsList)
         }
     }
 }

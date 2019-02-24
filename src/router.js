@@ -7,7 +7,7 @@ import Dashboard from './views/Dashboard.vue'
 import GetHelp from './views/GetHelp.vue'
 import GiveHelp from './views/GiveHelp.vue'
 import VoluntaryChatList from "./views/VoluntaryChatList.vue"
-import Counselor from "./views/Counselor.vue"
+import ClientChatList from "./views/ClientChatList.vue"
 
 
 
@@ -68,8 +68,8 @@ var router =  new Router({
       }
     },
     {
-      path: '/chat',
-      name: 'chat',
+      path: '/VoluntaryChatList',
+      name: 'VoluntaryChatList',
       component: VoluntaryChatList,
       meta: {
         requiresAuth: true,
@@ -77,9 +77,9 @@ var router =  new Router({
       }
     },
     {
-      path: '/counselor',
-      name: 'counselor',
-      component: Counselor,
+      path: '/ClientChatList',
+      name: 'ClientChatList',
+      component: ClientChatList,
       meta: {
         requiresAuth: true,
         client:true
