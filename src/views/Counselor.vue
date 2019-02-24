@@ -13,7 +13,7 @@
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-btn v-if="chatRoom" flat @click="openChat(chatRoom)" color="green">Converse!</v-btn>
+          <v-btn v-if="chatRoom" round dark @click="openChat(chatRoom)" color="Black">Converse!</v-btn>
         </v-card-actions>
       </v-card>
 
@@ -39,7 +39,7 @@
                         ></v-text-field>
                         
                     </v-form>
-                    <v-btn flat type="submit" @click="sendMessage" color="green">Enviar</v-btn>
+                    <v-btn round dark type="submit" @click="sendMessage" color="Black">Enviar</v-btn>
                 </v-card-actions>
                 
             </v-card>
